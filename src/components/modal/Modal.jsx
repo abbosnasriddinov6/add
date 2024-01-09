@@ -175,118 +175,39 @@
 import React, { useState } from 'react';
 
 const FuncStudent = () => {
-//   const [person, setPerson] = useState({
-//     firstName: '',
-//     lastName: '',
-//     age: 0,
-//   });
-//   const [student, setStudent] = useState({
-//     firstName: '',
-//     lastName: '',
-//     age: 0,
-//   });
-
-//   const addStudent = (e) => {
-//     e.preventDefault();
-//     setStudent(...person, student);
-//   };
-//   return (
-//     <div className="divinput">
-//       <form onSubmit={addStudent}>
-//         <div className="mb">
-//           <label className="label " htmlFor="firstName">
-//             <h4 className='text'>Firstname</h4>
-//           </label>
-//           <input
-//             className="form"
-//             type="text"
-//             name="firstName"
-//             id="firstName"
-//             placeholder='Firstname...'
-//             value={person.firstName}
-//             onChange={(e) =>
-//               setPerson({
-//                 ...person,
-//                 firstName: e.target.value,
-//               })
-//             }
-//           />
-//         </div>
-//         <div className="mb">
-//           <label className="" htmlFor="lastName">
-//             <h4 className='text'>LastName</h4>
-//           </label>
-//           <input
-//             className="form"
-//             type="text"
-//             name="lastName"
-//             id="lastName"
-//             placeholder='Lastname...'
-//             value={person.lastName}
-//             onChange={(e) => setPerson({ ...person, lastName: e.target.value })}
-//           />
-//         </div>
-//         <div className="mb">
-//           <label className="label" htmlFor="age">
-//           <h4 className='text'>Phone</h4>
-//           </label>
-//           <input
-//             className="form"
-//             type="text"
-//             name="age"
-//             id="age"
-//             placeholder='Tel...'
-//             value={person.age}
-//             onChange={(e) => setPerson({ ...person, age: e.target.value })} 
-//           />
-//         </div>
-//         <button type="submit"  className='button'>
-//           Add cantact
-//         </button>
-//       </form>
-//       <div className="my">
-//         <h2>
-//           {student.firstName} {student.lastName}  {' '}
-//           {student.age ? student.age : ''} 
-//           {student.butto}
-//         </h2>
-        
-//           <button className='dele'>Edit</button>
-//           <button className='dele'>Delete</button>
-        
-//       </div>
-//     </div>
-//   );
-
-
-const [student,setstudent]=useState([{firstname:'', lastname:'', number:'' }])
-  const [students,setstudents]=useState([{firstname:'Ali', lastname:'Doe', number:'847463632' }])
+  const [students,setstudents]=useState([{firstname:'Joon', lastname:'Smith', number:'11111111' }])
+  const [student,setstudent]=useState([{firstname:'', lastname:'', number:'' }])
+ 
   
   const handleclick=(e)=>{
     e.preventDefault()
     setstudents([...students ,student])
     
   }
+
+
+
+
   return (
     <>
-    <div className="route">
+    <div className="divku">
         <form onSubmit={handleclick}>
           <input onChange={(e)=> 
             setstudent({...student,firstname:e.target.value})} 
-            value={student.firsname} name='firstname' placeholder='FirstName...' type="text" />
+            name='firstname' placeholder='FirstName...' type="text" value={student.firsname}  />
           <input onChange={(e)=> 
             setstudent({...student,lastname:e.target.value})} 
-            value={student.lastnamesname} name='lastname'  placeholder='LastName...' type="text" />
+            name='lastname'  placeholder='LastName...' type="text"  value={student.lastnamesname}/>
           <input onChange={(e)=> 
             setstudent({...student,number:e.target.value})} 
-            value={student.number} name='number'  placeholder='Number..' type="number" />
+             name='number'  placeholder='Number..' type="number" value={student.number}/>
           <button type='submit' onClick={handleclick} className='button'>Add</button>
         </form>
 
 
         <table>
        
-          <tbody id='table'>
+          <tbody>
               {
                 students.map((student)=>{
                   return(
@@ -295,7 +216,8 @@ const [student,setstudent]=useState([{firstname:'', lastname:'', number:'' }])
                       <td>{student.firstname}</td>
                       <td>{student.lastname}</td>
                       <td>{student.number}</td>
-                      <div className="buttons">
+                      <div className="btn">
+                        
                       <button className='edit'>Edit</button>
                       <button className='delete'>Delete</button>
                       </div>
@@ -313,3 +235,86 @@ const [student,setstudent]=useState([{firstname:'', lastname:'', number:'' }])
 };
 
 export default FuncStudent;
+
+                  //   const [person, setPerson] = useState({
+                  //     firstName: '',
+                  //     lastName: '',
+                  //     age: 0,
+                  //   });
+                  //   const [student, setStudent] = useState({
+                  //     firstName: '',
+                  //     lastName: '',
+                  //     age: 0,
+                  //   });
+                  
+                  //   const addStudent = (e) => {
+                  //     e.preventDefault();
+                  //     setStudent(...person, student);
+                  //   };
+                  //   return (
+                  //     <div className="divinput">
+                  //       <form onSubmit={addStudent}>
+                  //         <div className="mb">
+                  //           <label className="label " htmlFor="firstName">
+                  //             <h4 className='text'>Firstname</h4>
+                  //           </label>
+                  //           <input
+                  //             className="form"
+                  //             type="text"
+                  //             name="firstName"
+                  //             id="firstName"
+                  //             placeholder='Firstname...'
+                  //             value={person.firstName}
+                  //             onChange={(e) =>
+                  //               setPerson({
+                  //                 ...person,
+                  //                 firstName: e.target.value,
+                  //               })
+                  //             }
+                  //           />
+                  //         </div>
+                  //         <div className="mb">
+                  //           <label className="" htmlFor="lastName">
+                  //             <h4 className='text'>LastName</h4>
+                  //           </label>
+                  //           <input
+                  //             className="form"
+                  //             type="text"
+                  //             name="lastName"
+                  //             id="lastName"
+                  //             placeholder='Lastname...'
+                  //             value={person.lastName}
+                  //             onChange={(e) => setPerson({ ...person, lastName: e.target.value })}
+                  //           />
+                  //         </div>
+                  //         <div className="mb">
+                  //           <label className="label" htmlFor="age">
+                  //           <h4 className='text'>Phone</h4>
+                  //           </label>
+                  //           <input
+                  //             className="form"
+                  //             type="text"
+                  //             name="age"
+                  //             id="age"
+                  //             placeholder='Tel...'
+                  //             value={person.age}
+                  //             onChange={(e) => setPerson({ ...person, age: e.target.value })} 
+                  //           />
+                  //         </div>
+                  //         <button type="submit"  className='button'>
+                  //           Add cantact
+                  //         </button>
+                  //       </form>
+                  //       <div className="my">
+                  //         <h2>
+                  //           {student.firstName} {student.lastName}  {' '}
+                  //           {student.age ? student.age : ''} 
+                  //           {student.butto}
+                  //         </h2>
+                          
+                  //           <button className='dele'>Edit</button>
+                  //           <button className='dele'>Delete</button>
+                          
+                  //       </div>
+                  //     </div>
+                  //   );
